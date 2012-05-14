@@ -1,0 +1,2 @@
+alias fbi="fbi -a --noverbose --readahead"
+alias nano="vim" # FUCK NANO
