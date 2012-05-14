@@ -1,0 +1,6 @@
+URxvt.background: black
+URxvt.foreground: grey
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=10:antialias=true:hinting=true
+URxvt.searchable-scrollback: CM-s
+URxvt.transparent: true
+URxvt.secondaryWheel: true
