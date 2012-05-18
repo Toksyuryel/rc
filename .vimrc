@@ -43,6 +43,9 @@ colorscheme molokai             " prettify all the colors
 au FileType text,none let b:SuperTabDisabled=1
 au FileType text,none setlocal noautoindent textwidth=80
 
+" SQL
+au FileType sql let g:sql_type_default = 'postgresql'
+
 " reST
 au FileType rst setlocal textwidth=80
 
