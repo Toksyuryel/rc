@@ -4,3 +4,6 @@ URxvt.font: xft:DejaVu Sans Mono:pixelsize=10:antialias=true:hinting=true
 URxvt.searchable-scrollback: CM-s
 URxvt.transparent: true
 URxvt.secondaryWheel: true
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+URxvt.urlLauncher: firefox
