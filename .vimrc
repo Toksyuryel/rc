@@ -2,12 +2,12 @@
 filetype plugin indent on       " turn on all the filetype shit
 syntax on                       " turn on syntax highlighting
 set nocompatible                " because fuck vi
+set titlestring=vim\ %{expand(\"%t\")} " set up what we want our title to be
 if &term =~ "^screen"           " some magic to fix the window title in screen
-  set titlestring=vim\ %{expand(\"t\")}
   set t_ts=k
   set t_fs=\
 endif                           " thanks Eevee!
-set title                       " set the window title
+set title                       " actually set the window title
 set backspace=indent,eol,start  " backspace over anything
 set nobackup                    " don't make backups
 set writebackup                 " unless we're saving a file
@@ -38,6 +38,9 @@ let g:SuperTabDefaultCompletionType = "context" " figure out what completion typ
 set completeopt=menuone,longest,preview " make the completion really pretty and show docstrings
 set background=dark t_Co=256    " make sure vim knows my background is dark and my terminal can do 256 colors
 colorscheme molokai             " prettify all the colors
+" Override the background color from the colorscheme so I can still see my pretty background image in vim
+hi Normal ctermbg=None
+hi NonText ctermbg=None
 
 " Disable SuperTab in text files where it only gets in the way
 au FileType text,none let b:SuperTabDisabled=1
