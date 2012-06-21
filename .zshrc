@@ -112,20 +112,6 @@ function title {
         print -n "\ek$prefix$1\e\\"
     fi
 
-
-    # Prefix the xterm title with the current machine name, but only if I'm not
-    # on a local machine.  This is tricky, because screen won't reliably know
-    # whether I'm using SSH right now!  So just assume I'm local iff I'm not
-    # running over SSH *and* not using screen.  Local screens are fairly rare.
-    prefix=$HOST
-    if [[ $SSH_CONNECTION == '' && $TERM != "screen"* ]]; then
-        prefix=''
-    fi
-    # Wrap it in brackets
-    if [[ $prefix != '' ]]; then
-        prefix="[$prefix] "
-    fi
-
     # Set xterm window title
     if [[ $TERM == "xterm"* || $TERM == "screen"* ]]; then
         print -n "\e]2;$prefix$1\a"
