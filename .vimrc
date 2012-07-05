@@ -11,7 +11,13 @@ set title                       " actually set the window title
 set backspace=indent,eol,start  " backspace over anything
 set nobackup                    " don't make backups
 set writebackup                 " unless we're saving a file
+set undodir=~/.vim/undo         " specify where to store persistent undo files
+set undofile                    " turn on the persistent undo feature
 set history=50                  " retain 50 lines of :command history
+set laststatus=2                " show the status line always
+set lazyredraw                  " don't update the screen when executing stored proceedures
+set showmatch                   " briefly show matching brackets when inserting one
+set matchtime=2                 " very briefly
 set ruler                       " always display the cursor position
 set showcmd                     " show commands as we type
 set number                      " show line numbers
@@ -32,10 +38,16 @@ set fileencodings=ucs-bom,utf-8,iso-8859-1 " detect when files are unicode
 set wildmenu                    " zsh is awesome
 set wildmode=full               " like seriously
 set wildignore+=*.sw,__pycache__,*.pyc " ignore files we don't really care about
+set autoread                    " if an unedited open file is changed, automatically reload it
 set scrolloff=4                 " start scrolling early to avoid surprises and limit overscrolling
 set hidden                      " permit hidden buffers to contain unsaved changes
 let g:SuperTabDefaultCompletionType = "context" " figure out what completion type to use from context
 set completeopt=menuone,longest,preview " make the completion really pretty and show docstrings
+let mapleader = ","
+let g:mapleader = ","
+" some insert-mode undo voodoo from Eevee
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 set background=dark t_Co=256    " make sure vim knows my background is dark and my terminal can do 256 colors
 colorscheme molokai             " prettify all the colors
 " Override the background color from the colorscheme so I can still see my pretty background image in vim
