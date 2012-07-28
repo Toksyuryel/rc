@@ -95,7 +95,7 @@ case $(uname -s) in
         zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
         ;;
 esac
-alias ls="ls $LSOPTS"
+alias ls="ls $LSOPTS --color"
 alias ll="ls $LLOPTS | less -FX"
 alias grep="noglob grep -E"
 
