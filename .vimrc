@@ -4,14 +4,14 @@ syntax on                       " turn on syntax highlighting
 set nocompatible                " because fuck vi
 set titlestring=vim\ %{expand(\"%t\")} " set up what we want our title to be
 if &term =~ "^screen"           " some magic to fix the window title in screen/tmux
-  set t_ts=k
-  set t_fs=\
   if &term == "screen-256color" " and this magic fixes ctrl+arrow
       set term=xterm-256color
   else
       set term=xterm
-  endif                         " thanks
-endif                           "  Eevee!
+  endif
+  set t_ts=k                  " these have to go after the rest, 'set term' resets them
+  set t_fs=\
+endif                           " Thanks Eevee!
 set title                       " actually set the window title
 set backspace=indent,eol,start  " backspace over anything
 set nobackup                    " don't make backups
