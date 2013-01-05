@@ -61,7 +61,7 @@ hi NonText ctermbg=None
 
 " Disable SuperTab in text files where it only gets in the way
 au FileType text,none let b:SuperTabDisabled=1
-au FileType text,none setlocal noautoindent textwidth=80
+au FileType text,none setlocal noautoindent
 
 " SQL
 au FileType sql let g:sql_type_default = 'postgresql'
@@ -80,8 +80,8 @@ au FileType python let python_highlight_all=1
 au FileType python let python_slow_sync = 1
 
 " HTML
-au FileType html,mako setlocal foldmethod=syntax
-au FileType html,mako setlocal shiftwidth=2 softtabstop=2
+au FileType html,xhtml,mako setlocal foldmethod=syntax
+au FileType html,xhtml,mako setlocal shiftwidth=2 softtabstop=2
 au BufNewFile *.html 0read ~/.vim/skel/html
 
 " CSS
