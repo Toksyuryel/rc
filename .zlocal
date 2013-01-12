@@ -1,2 +1,5 @@
 alias fbi="fbi -a --noverbose --readahead"
-alias nano="vim" # FUCK NANO
+alias nano="vim"                            # FUCK NANO
+alias vim="vim -p"                          # all files get their own tab
+
+PATH=$PATH:$HOME/bin
