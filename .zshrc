@@ -98,6 +98,7 @@ esac
 alias ls="ls $LSOPTS --color"
 alias ll="ls $LLOPTS | less -FX"
 alias grep="noglob grep -E"
+alias echo="env echo"              # zsh's echo builtin results in unexpected behavior
 
 
 ### screen
