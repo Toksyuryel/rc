@@ -25,7 +25,6 @@ set showmatch                   " briefly show matching brackets when inserting 
 set matchtime=2                 " very briefly
 set ruler                       " always display the cursor position
 set showcmd                     " show commands as we type
-set number                      " show line numbers
 set relativenumber              " number lines relative to how far away they are from the current line
 set cursorline                  " highlight the line we're working on so we don't lose track of it
 set hlsearch                    " highlight the search term so it's easier to find
@@ -59,6 +58,17 @@ colorscheme molokai             " prettify all the colors
 " Override the background color from the colorscheme so I can still see my pretty background image in vim
 hi Normal ctermbg=None
 hi NonText ctermbg=None
+" some voodoo via BitShift to provide a toggle between relativenumber and number
+function! g:ToggleNumberingMode()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+" toggle keys
+set pastetoggle=<F2>
+nnoremap <F3> :call g:ToggleNumberingMode()<cr>
 
 " Disable SuperTab in text files where it only gets in the way
 au FileType text,none let b:SuperTabDisabled=1
