@@ -48,8 +48,8 @@ set scrolloff=4                 " start scrolling early to avoid surprises and l
 set hidden                      " permit hidden buffers to contain unsaved changes
 let g:SuperTabDefaultCompletionType = "context" " figure out what completion type to use from context
 set completeopt=menuone,longest,preview " make the completion really pretty and show docstrings
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "<space>"
+let g:mapleader = "<space>"
 " some insert-mode undo voodoo from Eevee
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
