@@ -65,10 +65,14 @@ function! g:ToggleNumberingMode()
     else
         set relativenumber
     endif
+    redraw!
 endfunc
 " toggle keys
 set pastetoggle=<F2>
-nnoremap <F3> :call g:ToggleNumberingMode()<cr>
+noremap <F3> :call g:ToggleNumberingMode()<cr>
+lnoremap <F3> :call g:ToggleNumberingMode()<cr>
+inoremap <F3> <c-o>:call g:ToggleNumberingMode()<cr>
+cnoremap <F3> <c-r>=g:ToggleNumberingMode()?'':''<cr>
 
 " Disable SuperTab in text files where it only gets in the way
 au FileType text,none let b:SuperTabDisabled=1
