@@ -65,12 +65,14 @@ function! g:ToggleNumberingMode()
     else
         set relativenumber
     endif
-    redraw!
+    redraw
 endfunc
 " toggle keys
 set pastetoggle=<F2>
-noremap <F3> :call g:ToggleNumberingMode()<cr>
+nnoremap <F3> :call g:ToggleNumberingMode()<cr>
+onoremap <F3> :call g:ToggleNumberingMode()<cr>
 lnoremap <F3> :call g:ToggleNumberingMode()<cr>
+vnoremap <F3> :call g:ToggleNumberingMode()<cr>gv
 inoremap <F3> <c-o>:call g:ToggleNumberingMode()<cr>
 cnoremap <F3> <c-r>=g:ToggleNumberingMode()?'':''<cr>
 
