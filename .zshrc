@@ -46,6 +46,11 @@ setopt complete_in_word
 autoload -Uz compinit
 compinit
 
+# If $TERM is xterm, I am probably using Terminology which supports 256 colors just fine but neglects to tell anyone about it
+if [[ "$TERM" == 'xterm' ]]; then
+    TERM='xterm-256color'
+fi
+
 ### History
 setopt extended_history hist_no_store hist_ignore_dups hist_expire_dups_first hist_find_no_dups inc_append_history share_history hist_reduce_blanks hist_ignore_space
 export HISTFILE=~/.zsh_history
